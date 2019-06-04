@@ -65,6 +65,7 @@ $(document).ready(function () {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 
   
@@ -97,13 +98,16 @@ $(document).ready(function () {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 
   $('.lineUpButton').on('click', function (event) { //function here lines up dancers
-    
-    console.log(window.dancers);
 
+    //window.dancer has all the dancers
 
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
 
     // var lineUpFunctionName = $(this).data('line-up-function-name');
 
@@ -120,7 +124,36 @@ $(document).ready(function () {
   //   );
   //   $('body').append(dancer.$node);
   // });
-  })
+  });
 
+
+  // $('.interactButton').on('click', function (event) { 
+
+  //   var dancersArr = [];
+
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     if(!dancersArr.includes(windows.dancer[i])) {
+  //       var dancer1 = window.dancers[i];
+  //       var minDist = Infinity;
+  //       var 
+  //       for (var j = i + 1; j < window.dancers.length; j++) {
+  //         var dancer2 = window.dancers[j];
+  //         var horDist = dancer2.left - dancer1.left;
+  //         var vertDist = dancer2.top - dancer1.top;
+  //         var dist = Math.sqrt(horDist**2 + vertDist**2);
+  //         if(dist < minDist) {
+  //           minDist = dist;
+
+  //         }
+  //       }
+  //     }
+  //   }
+
+
+  // });
+
+  $('span.dancer').mouseover(function() {
+    $( this ).css("border", "50px solid #0F9D58");
+  });
 
 });

@@ -11,5 +11,10 @@ var ChameleonDancer = function(top, left, timeBetweenSteps) {
   
   ChameleonDancer.prototype.step = function() {
     this.oldStep();
-    this.$node.css("border", "30px", "solid", "green");
+    // this.$node.css('border', '#3f977e')
+    // this.$node.toggle();
+    this.$node.css("border", "30px solid #F4B400").animate({
+      opacity: 1,
+      borderColor: '#3f977e'
+    }, 1000);
   };

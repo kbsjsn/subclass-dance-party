@@ -13,9 +13,7 @@ var SlidingDancer = function(top, left, timeBetweenSteps) {
     
     this.oldStep();
     this.$node.animate({
-      opacity: 0.25,
-      left: "+=300",
-      height: "toggle"
+      opacity: 1,
+      left: "+=300"
     }, 1000);
   };
-
