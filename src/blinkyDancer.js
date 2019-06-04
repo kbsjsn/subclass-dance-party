@@ -5,12 +5,13 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-BlinkyDancer.prototype.oldStep = BlinkyDancer.prototype.step;
+// BlinkyDancer.prototype.oldStep = BlinkyDancer.prototype.step;
 // console.log("this is:", BlinkyDancer.prototype.step)
 
 
 BlinkyDancer.prototype.step = function() {
-  this.oldStep();
+  // this.oldStep();
+  Dancer.prototype.step.call(this);   //take Dancer's step function and bind its "this" to blinkyDancer prototype
   this.$node.toggle();
 };
 
@@ -40,22 +41,3 @@ BlinkyDancer.prototype.step = function() {
 
 // };
 /*************************************************************************/
-
-
-// var Chunin = function () {
-//   Genin.call(this, properties)
-// }
-
-// Chunin.prototype = Object.create(Genin.prototype);
-// Chunin.prototype.constructor = Chunin;
-
-// var chunin1 = new Chunin;
-// var chunin2 = new Chunin
-// chunin1.attack = light blade
-// chunin2.attack = shadow blade
-
-
-/*
-blinky dancer is a subclass of dancer,
-just as chunin is a subclass of genin
-*/

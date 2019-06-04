@@ -1,5 +1,5 @@
 var ChameleonDancer = function(top, left, timeBetweenSteps) {
-    SlidingDancer.call(this, top, left, timeBetweenSteps);
+    Dancer.call(this, top, left, timeBetweenSteps);
   };
   
   ChameleonDancer.prototype = Object.create(Dancer.prototype);
@@ -16,5 +16,5 @@ var ChameleonDancer = function(top, left, timeBetweenSteps) {
     this.$node.css("border", "30px solid #F4B400").animate({
       opacity: 1,
       borderColor: '#3f977e'
-    }, 1000);
+    }, 10000);
   };
