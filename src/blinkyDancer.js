@@ -1,5 +1,27 @@
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
+  // Dancer.call(this);
+  console.log("BLINKDANCER THIS IS >>:", this);
+};
+
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype.constructor = BlinkyDancer;
+
+BlinkyDancer.prototype.oldStep = BlinkyDancer.prototype.step;
+// console.log("this is:", BlinkyDancer.prototype.step)
+
+
+BlinkyDancer.prototype.step = function() {
+  console.log(this.oldStep);
+  this.oldStep();
+  this.$node.toggle();
+};
+
+
+
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
+  // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
+  var blinkyDancer = new Dancer(top, left, timeBetweenSteps);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -16,4 +38,25 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   };
 
   return blinkyDancer;
+
 };
+/*************************************************************************/
+
+
+// var Chunin = function () {
+//   Genin.call(this, properties)
+// }
+
+// Chunin.prototype = Object.create(Genin.prototype);
+// Chunin.prototype.constructor = Chunin;
+
+// var chunin1 = new Chunin;
+// var chunin2 = new Chunin
+// chunin1.attack = light blade
+// chunin2.attack = shadow blade
+
+
+/*
+blinky dancer is a subclass of dancer,
+just as chunin is a subclass of genin
+*/
