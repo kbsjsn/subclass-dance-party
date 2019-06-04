@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('https://hdqwalls.com/download/walter-white-from-breaking-bad-1920x1080.jpg');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +21,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:30px solid aliceblue;
+  border-radius:30px;
   position:absolute;
 }
