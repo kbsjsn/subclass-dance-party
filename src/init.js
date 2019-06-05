@@ -149,9 +149,11 @@ $(document).ready(function () {
             minDist = dist;
             partner = dancer2;
           }
+          console.log("THESE ARE THE DISTANCES", dist);
         }
-        partnersArr.push([dancer1, partner]);
+        partnersArr.push([dancer1, partner, minDist]);
       // }
+      console.log(partnersArr);
     }
     for(var i of partnersArr) {
       i[1].setPosition(i[0].top + 5, i[0].left + 5);
